@@ -4,9 +4,7 @@ import "./App.css";
 
 function App() {
 	const messageRef = useRef<HTMLInputElement>(null);
-	const socket = io("https://socket-server-fuve.onrender.com/", {
-		withCredentials: true,
-	});
+	const socket = io("https://socket-server-fuve.onrender.com");
 
 	const sendMesage = (e: React.FormEvent) => {
 		e.preventDefault();
