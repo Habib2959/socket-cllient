@@ -5,7 +5,10 @@ import "./App.css";
 function App() {
 	const messageRef = useRef<HTMLInputElement>(null);
 	const socket = io("https://socket-server-fuve.onrender.com", {
-		withCredentials: false,
+		withCredentials: true,
+		extraHeaders: {
+			"my-custom-header": "abcd",
+		},
 	});
 
 	const sendMesage = (e: React.FormEvent) => {
